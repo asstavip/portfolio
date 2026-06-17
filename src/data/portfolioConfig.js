@@ -95,7 +95,7 @@ export const EXPERIENCE = [
       "Designed and shipped a full client project: Flutter mobile app + WordPress web platform. Validated REST API integration end-to-end, ensured cross-platform performance on iOS/Android, and collaborated with designers following Agile/Scrum.",
   },
   {
-    type: "work",
+    type: "Internship",
     title: "Flutter & Web Developer — Internship",
     organization: "M5Tech Company",
     period: "April 2025 — May 2025",

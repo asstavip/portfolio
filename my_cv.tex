@@ -1,0 +1,217 @@
+%% Abderrahmane El Bissari — Flutter Developer CV
+%% Tailored for Agh Data Agency — QA Testeur Mobile (Flutter & Django)
+%% Paste into Overleaf (pdflatex)
+
+\documentclass[10pt, a4paper]{article}
+
+% ─── Packages ───────────────────────────────────────────────────────────────
+\usepackage[a4paper, top=1.8cm, bottom=1.8cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontenc}
+\usepackage{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{multicol}
+
+% ─── Colors ─────────────────────────────────────────────────────────────────
+\definecolor{black}{HTML}{111111}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{medgray}{HTML}{555555}
+\definecolor{lightgray}{HTML}{AAAAAA}
+\definecolor{rulecol}{HTML}{111111}
+
+% ─── Hyperlinks ─────────────────────────────────────────────────────────────
+\hypersetup{colorlinks=false, hidelinks}
+
+% ─── Typography ─────────────────────────────────────────────────────────────
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ─── Section Titles ──────────────────────────────────────────────────────────
+\titleformat{\section}
+  {\large\bfseries\color{black}}
+  {}{0pt}
+  {}
+  [\vspace{1pt}\color{rulecol}\titlerule\vspace{4pt}]
+
+\titlespacing{\section}{0pt}{10pt}{4pt}
+
+% ─── Custom commands ─────────────────────────────────────────────────────────
+\newcommand{\cvheader}[4]{%
+  \begin{center}
+    {\Huge\bfseries\color{black} #1}\\[4pt]
+    {\small\color{medgray} #2 \quad|\quad #3 \quad|\quad #4}
+  \end{center}
+}
+
+\newcommand{\entry}[4]{%
+  \textbf{\color{black}#1} \hfill \textit{\small\color{medgray}#2}\\
+  \textit{\small\color{darkgray}#3} \hfill \textit{\small\color{lightgray}#4}\\
+}
+
+\newcommand{\project}[3]{%
+  \textbf{\color{black}#1} \hfill \textit{\small\color{medgray}#2}\\
+  {\small\color{darkgray}#3}\\
+}
+
+\newcommand{\skillrow}[2]{%
+  \textbf{\small #1:} & {\small\color{darkgray} #2}\\[2pt]
+}
+
+% ─── List style ──────────────────────────────────────────────────────────────
+\setlist[itemize]{
+  leftmargin=1.2em,
+  itemsep=1pt,
+  parsep=0pt,
+  topsep=2pt,
+  label={\small$\bullet$}
+}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\begin{document}
+
+% ─── HEADER ──────────────────────────────────────────────────────────────────
+\cvheader{Abderrahmane El Bissari}%
+  {\href{mailto:abdo.bissari@gmail.com}{abdo.bissari@gmail.com}}%
+  {+212 706 313 526}%
+  {Marrakech, Morocco — Remote}
+
+\vspace{6pt}
+
+% ─── PROFILE ─────────────────────────────────────────────────────────────────
+\section{Profile}
+
+Flutter Developer with hands-on professional experience building cross-platform 
+mobile applications (iOS/Android), now targeting QA \& software quality roles. 
+Strong foundation in \textbf{Python} and \textbf{C} (through rigorous systems 
+programming at \textbf{1337 — UM6P}), with active exploration of \textbf{AI and 
+LLM-based tools} in development workflows. Familiar with \textbf{REST API} 
+design and consumption, \textbf{Firebase} ecosystem, and backend integration — 
+providing a solid base for understanding and testing Django-backed APIs. 
+Detail-oriented, analytical, and fully remote-ready.
+
+% ─── EXPERIENCE ──────────────────────────────────────────────────────────────
+\section{Experience}
+
+\entry{WordPress \& Flutter Developer}{June 2025 – August 2025}%
+      {M5Tech Company}{Marrakech, Morocco}
+\begin{itemize}
+  \item Designed and shipped a full client project: Flutter mobile app + WordPress web platform.
+  \item Validated REST API integration end-to-end, identifying and reporting integration issues between frontend and backend layers.
+  \item Ensured smooth cross-platform performance on iOS and Android; flagged and tracked UI/UX regressions during iterative releases.
+  \item Collaborated with designers and backend engineers following Agile/Scrum methodologies.
+\end{itemize}
+
+\vspace{6pt}
+
+\entry{Flutter \& Web Developer — Internship}{April 2025 – May 2025}%
+      {M5Tech Company}{Marrakech, Morocco}
+\begin{itemize}
+  \item Led Flutter app development with Node.js backend integration and REST API consumption.
+  \item Manually tested API endpoints using Postman; documented discrepancies between expected and actual responses.
+  \item Delivered production-ready modules with clear UI/logic/data separation, enabling easier regression testing.
+\end{itemize}
+
+% ─── 1337 PROJECTS ───────────────────────────────────────────────────────────
+\section{1337 School Projects (Systems \& Low-Level Programming)}
+
+\project{Libft}{2024}%
+  {Re-implementation of the C standard library from scratch. Deepened understanding of memory management, pointers, and safe string/data manipulation — foundational for writing and testing reliable low-level code.}
+
+\vspace{4pt}
+\project{get\_next\_line}{2024}%
+  {Custom implementation of a line-by-line file reader in C using static variables and dynamic memory. Exercised edge-case thinking: EOF handling, empty files, multi-fd reading — directly applicable to systematic test case design.}
+
+\vspace{4pt}
+\project{ft\_printf}{2024}%
+  {Full reimplementation of the \texttt{printf} function in C, handling multiple format specifiers and edge cases. Developed rigorous input/output validation habits essential for QA work.}
+
+\vspace{4pt}
+\project{Born2beroot}{2024}%
+  {System administration project: configured a Debian virtual machine with strict security policies (SSH hardening, UFW firewall, sudo rules, password policies). Introduced to environment setup, monitoring, and compliance verification.}
+
+\vspace{4pt}
+\project{push\_swap}{2025}%
+  {Sorting algorithm challenge in C: sort a stack of integers using a limited instruction set with minimum operations. Sharpened algorithmic thinking, performance analysis, and behaviour verification under constraints.}
+
+\vspace{4pt}
+\project{A-Maze-ing}{2025}%
+  {Maze generation and solving project. Implemented and validated pathfinding logic, testing correctness across varied maze configurations and boundary conditions.}
+
+\vspace{4pt}
+\project{Codexion}{2025}%
+  {Advanced project combining systems-level C programming with higher-level tooling. Explored integration between components and practiced structured debugging and validation of complex multi-module behavior.}
+
+% ─── FLUTTER PROJECTS ────────────────────────────────────────────────────────
+\section{Mobile Projects}
+
+\project{AquaManage}{2025}%
+  {Water consumption \& billing management app. Flutter + MVVM + Cubit + local API. Tested API data flows and UI state transitions across feature modules.}
+
+\vspace{4pt}
+\project{PDF Quizzer}{2025}%
+  {App converting PDF content into MCQ / True-or-False quizzes. Flutter + Dart, dynamic question generation. Validated parsing accuracy and UI rendering across various PDF formats.}
+
+\vspace{4pt}
+\project{Tut App}{2024}%
+  {Modular Flutter app built with Clean Architecture and full REST API integration. Tested endpoint contracts and verified UI behaviour against API responses.}
+
+% ─── TECHNICAL SKILLS ────────────────────────────────────────────────────────
+\section{Technical Skills}
+
+\begin{tabular}{@{}p{3.2cm} p{13cm}@{}}
+  \skillrow{Mobile}{Flutter, Dart — cross-platform iOS/Android, UI testing, performance debugging}
+  \skillrow{Languages}{Python (advanced), C (advanced), Dart, JavaScript, TypeScript, PHP, SQL, HTML/CSS}
+  \skillrow{AI / LLM}{Actively exploring LLM-based development tools (prompt engineering, AI-assisted coding, model integration); GitHub Copilot, Windsurf, Cursor}
+  \skillrow{Backend \& APIs}{REST API design \& consumption, Firebase (Auth, Firestore, FCM, Storage), Node.js — solid base for understanding Django API structures}
+  \skillrow{QA \& Testing}{Manual functional testing, API testing (Postman), bug documentation, regression verification, Firebase Crashlytics}
+  \skillrow{Project Tools}{Git, GitHub, Jira/Trello (familiar), Firebase Console, VS Code, Android Studio}
+  \skillrow{Practices}{Agile/Scrum, clean code, OOP, Web Security (SQLi, XSS), systematic debugging}
+\end{tabular}
+
+% ─── EDUCATION ───────────────────────────────────────────────────────────────
+\section{Education}
+
+\entry{1337 Coding School — UM6P}{2025 – Present}%
+      {Software Engineering Program (C, Python, Systems, Algorithms)}{Rabat, Morocco}
+
+\vspace{4pt}
+\entry{ISTA NTIC Sidi Youssef Ben Ali}{2023 – 2025}%
+      {Diploma in Mobile Applications Development — \textbf{High Honors}}{Marrakech, Morocco}
+
+\vspace{4pt}
+\entry{Lyc\'ee Hassan II}{2022 – 2023}%
+      {Scientific Baccalaureate (SVT) — \textbf{Honors}}{Marrakech, Morocco}
+
+% ─── LANGUAGES ───────────────────────────────────────────────────────────────
+\section{Languages}
+
+\begin{tabular}{@{}lll@{}}
+  \textbf{Arabic} — Native \quad &
+  \textbf{English} — Professional working proficiency \quad &
+  \textbf{French} — Intermediate (technical reading)
+\end{tabular}
+
+% ─── SOFT SKILLS ─────────────────────────────────────────────────────────────
+\section{Soft Skills}
+
+\begin{multicols}{2}
+\begin{itemize}
+  \item Autonomous \& self-managed (100\% remote ready)
+  \item Analytical mindset, sharp eye for detail
+  \item Patient and methodical in bug investigation
+  \item Clear written communication for bug reports
+  \item Collaborative with mobile and backend teams
+  \item Fast learner, curiosity-driven
+\end{itemize}
+\end{multicols}
+
+\end{document}

@@ -29,12 +29,11 @@ export default function Navbar() {
         >
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center animate-pulse-glow">
             <span className="text-white font-bold text-lg font-[var(--font-heading)]">
-              {PROFILE.name[0]}
+              {PROFILE.firstName[0]}
             </span>
           </div>
           <span className="text-text-primary font-[var(--font-heading)] text-sm tracking-widest hidden sm:inline-block group-hover:text-accent transition-colors">
-            {PROFILE.name}
-            <span className="text-accent">{PROFILE.nameAccent}</span>
+            {PROFILE.firstName} <span className="text-accent">{PROFILE.lastName}</span>
           </span>
         </a>
 

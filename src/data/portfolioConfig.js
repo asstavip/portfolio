@@ -3,23 +3,21 @@
 // ============================================================
 
 export const PROFILE = {
-  name: "SHADOW",
-  nameAccent: "STRIKE",
-  title: "Mobile Developer & AI Engineer",
-  tagline: "I craft digital experiences that combine design, code, and storytelling.",
-  heroImage: "/hero.png",
-  resumeUrl: "#", // Link to your resume PDF
-  quote: {
-    text: "Design is not just what it looks like, but how it works.",
-    author: "Steve Jobs",
-  },
-  availableFor: "Freelance",
-  established: "2020",
-  location: "Digital World",
+  firstName: "ABDERRAHMANE",
+  lastName: "EL BISSARI",
+  title: "Flutter Developer & AI Explorer",
+  tagline:
+    "I build reliable cross-platform apps and explore how AI/LLMs fit into modern development workflows.",
+  resumeUrl: "/cv.pdf", // Place your CV PDF in /public/cv.pdf
+  email: "abdo.bissari@gmail.com",
+  phone: "+212 706 313 526",
+  availableFor: "Internship",
+  location: "Marrakech, Morocco",
+  school: "1337 — UM6P",
 };
 
 export const NAV_LINKS = [
-  { label: "About Me", href: "#about" },
+  { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
@@ -28,58 +26,60 @@ export const NAV_LINKS = [
 
 export const ABOUT = {
   heading: "About Me",
-  highlight: "I'm a Mobile Developer & AI Engineer",
+  highlight: "Flutter Developer & AI Explorer",
   description:
-    "Passionate about creating powerful mobile experiences and leveraging AI to solve real-world problems. I build cross-platform apps with Flutter and integrate intelligent features using modern LLM tools and cloud services.",
+    "Flutter Developer with hands-on professional experience building cross-platform mobile applications (iOS/Android). Strong foundation in Python and C through rigorous systems programming at 1337 — UM6P, with active exploration of AI and LLM-based tools in development workflows. Familiar with REST API design and consumption, Firebase ecosystem, and backend integration. Detail-oriented, analytical, and fully remote-ready.",
   bullets: [
-    "Mobile Development",
+    "Cross-Platform Mobile (Flutter/Dart)",
     "AI / LLM Integration",
-    "Cloud & Backend",
-    "UI/UX Design",
+    "REST APIs & Firebase Backend",
+    "Systems Programming (C/Python)",
   ],
 };
 
 export const SKILLS = [
   { name: "Flutter", icon: "🦋", level: 90 },
-  { name: "Dart", icon: "🎯", level: 85 },
-  { name: "C", icon: "⚙️", level: 75 },
-  { name: "Python", icon: "🐍", level: 80 },
+  { name: "Dart", icon: "🎯", level: 88 },
+  { name: "Python", icon: "🐍", level: 82 },
+  { name: "C", icon: "⚙️", level: 80 },
   { name: "Firebase", icon: "🔥", level: 85 },
-  { name: "AI / LLM", icon: "🤖", level: 78 },
+  { name: "AI / LLM", icon: "🤖", level: 75 },
+  { name: "JavaScript", icon: "📜", level: 70 },
+  { name: "Git", icon: "🔀", level: 85 },
 ];
 
 export const PROJECTS = [
   {
     id: 1,
-    title: "CyberFit",
+    title: "AquaManage",
     category: "Mobile App",
     description:
-      "A futuristic fitness tracking application with real-time health monitoring, AI-powered workout recommendations, and a sleek dark interface.",
+      "Water consumption & billing management app built with Flutter, MVVM architecture, Cubit state management, and local API integration. Full UI state transitions across feature modules.",
     image: "/project1.png",
-    tags: ["Flutter", "Firebase", "AI"],
-    liveUrl: "#",
+    tags: ["Flutter", "MVVM", "Cubit", "REST API"],
+    liveUrl: "",
     githubUrl: "#",
   },
   {
     id: 2,
-    title: "Aether AI",
-    category: "Dashboard",
+    title: "PDF Quizzer",
+    category: "Mobile App",
     description:
-      "An advanced AI analytics dashboard featuring predictive models, neural traffic monitoring, and real-time anomaly detection.",
+      "App that converts PDF content into MCQ and True-or-False quizzes with dynamic question generation. Validated parsing accuracy across various PDF formats.",
     image: "/project2.png",
-    tags: ["Python", "React", "LLM"],
-    liveUrl: "#",
+    tags: ["Flutter", "Dart", "AI"],
+    liveUrl: "",
     githubUrl: "#",
   },
   {
     id: 3,
-    title: "Neon Arcade",
-    category: "E-Commerce",
+    title: "Tut App",
+    category: "Mobile App",
     description:
-      "A cyberpunk-themed e-commerce platform with dynamic product cards, wishlist functionality, and immersive shopping experience.",
+      "Modular Flutter app built with Clean Architecture and full REST API integration. Tested endpoint contracts and verified UI behaviour against API responses.",
     image: "/project3.png",
-    tags: ["Flutter", "Dart", "Firebase"],
-    liveUrl: "#",
+    tags: ["Flutter", "Clean Arch", "REST API"],
+    liveUrl: "",
     githubUrl: "#",
   },
 ];
@@ -87,39 +87,51 @@ export const PROJECTS = [
 export const EXPERIENCE = [
   {
     type: "work",
-    title: "Mobile Developer",
-    organization: "Tech Corp",
-    period: "2023 — Present",
+    title: "WordPress & Flutter Developer",
+    organization: "M5Tech Company",
+    period: "June 2025 — Aug 2025",
+    location: "Marrakech, Morocco",
     description:
-      "Building cross-platform mobile applications using Flutter and integrating AI-powered features for enhanced user experiences.",
+      "Designed and shipped a full client project: Flutter mobile app + WordPress web platform. Validated REST API integration end-to-end, ensured cross-platform performance on iOS/Android, and collaborated with designers following Agile/Scrum.",
   },
   {
     type: "work",
-    title: "Freelance Developer",
-    organization: "Self-Employed",
-    period: "2021 — 2023",
+    title: "Flutter & Web Developer — Internship",
+    organization: "M5Tech Company",
+    period: "April 2025 — May 2025",
+    location: "Marrakech, Morocco",
     description:
-      "Delivered 10+ mobile and web projects for clients worldwide, specializing in Flutter development and Firebase backend integration.",
+      "Led Flutter app development with Node.js backend integration and REST API consumption. Manually tested API endpoints using Postman and delivered production-ready modules with clean architecture.",
   },
   {
     type: "education",
-    title: "Computer Science",
-    organization: "University",
-    period: "2019 — 2023",
+    title: "Software Engineering Program",
+    organization: "1337 Coding School — UM6P",
+    period: "2025 — Present",
+    location: "Rabat, Morocco",
     description:
-      "Bachelor's degree in Computer Science with focus on mobile computing, artificial intelligence, and software engineering.",
+      "Intensive software engineering program focused on C, Python, systems programming, and algorithms. Projects: Libft, get_next_line, ft_printf, Born2beroot, push_swap.",
+  },
+  {
+    type: "education",
+    title: "Diploma in Mobile Applications Development",
+    organization: "ISTA NTIC Sidi Youssef Ben Ali",
+    period: "2023 — 2025",
+    location: "Marrakech, Morocco",
+    description:
+      "Graduated with High Honors. Specialized in mobile app development with Flutter, Dart, and modern development practices.",
   },
 ];
 
 export const CONTACT = {
   heading: "Get In Touch",
   description:
-    "Have a project in mind or just want to connect? Feel free to reach out — I'm always open to new opportunities and collaborations.",
-  email: "your.email@example.com",
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername",
+    "Have a project in mind or want to discuss an internship opportunity? Feel free to reach out — I'm always open to new challenges and collaborations.",
+  email: "abdo.bissari@gmail.com",
+  github: "https://github.com/asstavip",
+  linkedin: "https://linkedin.com/in/abderrahmane-el-bissari",
 };
 
 export const FOOTER = {
-  text: `© ${new Date().getFullYear()} ShadowStrike. All rights reserved.`,
+  text: `© ${new Date().getFullYear()} Abderrahmane El Bissari. All rights reserved.`,
 };

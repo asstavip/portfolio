@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Logo + Copyright */}
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center">
-              <span className="text-white font-bold text-sm font-[var(--font-heading)]">{PROFILE.name[0]}</span>
+              <span className="text-white font-bold text-sm font-[var(--font-heading)]">{PROFILE.firstName[0]}</span>
             </div>
             <span className="text-text-muted text-sm font-[var(--font-mono)]">{FOOTER.text}</span>
           </div>

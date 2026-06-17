@@ -38,14 +38,15 @@ export const ABOUT = {
 };
 
 export const SKILLS = [
-  { name: "Flutter", icon: "🦋", level: 90 },
-  { name: "Dart", icon: "🎯", level: 88 },
-  { name: "Python", icon: "🐍", level: 82 },
-  { name: "C", icon: "⚙️", level: 80 },
-  { name: "Firebase", icon: "🔥", level: 85 },
-  { name: "AI / LLM", icon: "🤖", level: 75 },
-  { name: "JavaScript", icon: "📜", level: 70 },
-  { name: "Git", icon: "🔀", level: 85 },
+  { name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" },
+  { name: "Dart", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" },
+  { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+  { name: "C", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" },
+  { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" },
+  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+  { name: "Kotlin", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" },
+  { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+  { name: "AI / LLM", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" },
 ];
 
 export const PROJECTS = [
@@ -135,3 +136,41 @@ export const CONTACT = {
 export const FOOTER = {
   text: `© ${new Date().getFullYear()} Abderrahmane El Bissari. All rights reserved.`,
 };
+
+export const PROJECTS_42 = [
+  {
+    name: "Libft",
+    description: "My first C library. A ground-up recreation of various standard C library functions, emphasizing memory management and algorithm optimization.",
+    tags: ["C", "Memory Management", "Algorithms"],
+    score: "125%",
+    githubUrl: "#",
+  },
+  {
+    name: "get_next_line",
+    description: "A function that reads a file line by line. Introduced the concept of static variables and robust File I/O handling in C.",
+    tags: ["C", "File I/O", "Static Variables"],
+    score: "125%",
+    githubUrl: "#",
+  },
+  {
+    name: "ft_printf",
+    description: "A fully functional recreation of the famous C printf function, exploring variadic arguments and complex string parsing.",
+    tags: ["C", "Variadic Functions", "Parsing"],
+    score: "100%",
+    githubUrl: "#",
+  },
+  {
+    name: "Born2beroot",
+    description: "System administration project requiring the setup of a secure Virtual Machine with Debian, strict UFW firewall, and LVM partitions.",
+    tags: ["SysAdmin", "Linux", "Bash"],
+    score: "100%",
+    githubUrl: "#",
+  },
+  {
+    name: "push_swap",
+    description: "A highly optimized data sorting algorithm project using only two stacks and a strictly limited set of stack operations.",
+    tags: ["C", "Sorting Algorithms", "Optimization"],
+    score: "100%",
+    githubUrl: "#",
+  }
+];

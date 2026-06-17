@@ -12,6 +12,8 @@ import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ProjectDetails from "./components/ProjectDetails";
+import SectionDivider from "./components/SectionDivider";
+import Student42Projects from "./components/Student42Projects";
 
 const particlesInit = async (engine) => {
   await loadSlim(engine);
@@ -46,10 +48,35 @@ function Home() {
   return (
     <>
       <Hero />
-      <About />
+      
+      {/* SOLID SECTION: About */}
+      <SectionDivider type={1} className="text-bg-secondary relative z-10" flip={false} />
+      <div className="bg-bg-secondary relative z-10">
+        <About />
+      </div>
+      <SectionDivider type={2} className="text-bg-secondary relative z-10" flip={true} />
+      
+      {/* TRANSPARENT SECTION: Skills */}
       <Skills />
-      <Projects />
-      <Experience />
+      
+      {/* SOLID SECTION: Projects */}
+      <SectionDivider type={3} className="text-bg-secondary relative z-10" flip={false} />
+      <div className="bg-bg-secondary relative z-10">
+        <Projects />
+      </div>
+      <SectionDivider type={4} className="text-bg-secondary relative z-10" flip={true} />
+      
+      {/* TRANSPARENT SECTION: 42 Student Projects */}
+      <Student42Projects />
+      
+      {/* SOLID SECTION: Experience */}
+      <SectionDivider type={1} className="text-bg-secondary relative z-10" flip={false} />
+      <div className="bg-bg-secondary relative z-10">
+        <Experience />
+      </div>
+      <SectionDivider type={2} className="text-bg-secondary relative z-10" flip={true} />
+      
+      {/* TRANSPARENT SECTION: Contact */}
       <Contact />
     </>
   );

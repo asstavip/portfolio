@@ -1,306 +1,170 @@
 import { motion } from "framer-motion";
-import { PROFILE } from "../data/portfolioConfig";
+import { PROFILE, SKILLS } from "../data/portfolioConfig";
 
-/* ── animation helpers ───────────────────────────────────────── */
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] },
-});
-
-/* ── code-editor lines (real Dart, not pseudocode) ───────────── */
-const CODE_LINES = [
-  { indent: 0, tokens: [
-    { t: "import ", c: "#c084fc" }, { t: "'package:flutter/material.dart'", c: "#34d399" }, { t: ";", c: "#4b5563" }
-  ]},
-  { indent: 0, tokens: [] },
-  { indent: 0, tokens: [
-    { t: "class ", c: "#c084fc" }, { t: "Portfolio ", c: "#e2e8f0" }, { t: "extends ", c: "#c084fc" },
-    { t: "StatelessWidget ", c: "#e2e8f0" }, { t: "{", c: "#4b5563" }
-  ]},
-  { indent: 1, tokens: [{ t: "@override", c: "#6b7280" }] },
-  { indent: 1, tokens: [
-    { t: "Widget ", c: "#c084fc" }, { t: "build", c: "#f0abfc" }, { t: "(", c: "#4b5563" },
-    { t: "BuildContext context", c: "#e2e8f0" }, { t: ") {", c: "#4b5563" }
-  ]},
-  { indent: 2, tokens: [
-    { t: "return ", c: "#c084fc" }, { t: "MaterialApp", c: "#e2e8f0" }, { t: "(", c: "#4b5563" }
-  ]},
-  { indent: 3, tokens: [
-    { t: "title: ", c: "#93c5fd" }, { t: "'El Bissari'", c: "#34d399" }, { t: ",", c: "#4b5563" }
-  ]},
-  { indent: 3, tokens: [
-    { t: "theme: ", c: "#93c5fd" }, { t: "ThemeData.dark", c: "#e2e8f0" }, { t: "(),", c: "#4b5563" }
-  ]},
-  { indent: 3, tokens: [
-    { t: "home: ", c: "#93c5fd" }, { t: "const ", c: "#c084fc" }, { t: "DashboardScreen", c: "#e2e8f0" }, { t: "(),", c: "#4b5563" }
-  ]},
-  { indent: 2, tokens: [{ t: ");", c: "#4b5563" }] },
-  { indent: 1, tokens: [{ t: "}", c: "#4b5563" }] },
-  { indent: 0, tokens: [{ t: "}", c: "#4b5563" }] },
-];
-
-/* ── floating tech pills ─────────────────────────────────────── */
-const TECH_PILLS = [
-  { label: "Flutter", top: "8%",  left: "-6%",  rotate: "-3deg", delay: 0 },
-  { label: "Python",  top: "32%", right: "-8%", rotate: "2deg",  delay: 1.4 },
-  { label: "C",       bottom: "12%", left: "4%", rotate: "-1deg", delay: 0.7 },
-];
-
-/* ── hand-drawn SVG underline ────────────────────────────────── */
-function SketchUnderline() {
-  return (
-    <svg
-      viewBox="0 0 320 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-[90%] h-3 mt-1"
-      preserveAspectRatio="none"
-    >
-      <motion.path
-        d="M2 8 C 40 3, 80 10, 120 6 S 200 2, 240 7 S 290 4, 318 6"
-        stroke="url(#underline-grad)"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        fill="none"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 0.7 }}
-        transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
-      />
-      <defs>
-        <linearGradient id="underline-grad" x1="0" y1="0" x2="320" y2="0" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#a855f7" />
-          <stop offset="1" stopColor="#c084fc" />
-        </linearGradient>
-      </defs>
-    </svg>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════════ */
 export default function Hero() {
+  const fadeUp = (delay = 0) => ({
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] },
+  });
+
   return (
     <section
-      id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      id="home"
+      className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden"
     >
-      {/* ── Content ─────────────────────────────────────────── */}
-      <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-20 items-center pt-28 pb-24 lg:pt-36 lg:pb-28">
-
-        {/* ════ LEFT COLUMN ════ */}
-        <div className="space-y-6 lg:pr-4">
-          {/* Eyebrow */}
+      <div className="section-container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center h-full">
+        
+        {/* ==================== LEFT COLUMN ==================== */}
+        <div className="flex flex-col items-start justify-center pt-10">
           <motion.p
-            {...fadeUp(0)}
-            className="text-accent/70 text-[11px] font-[var(--font-mono)] tracking-[0.2em]"
+            {...fadeUp(0.1)}
+            className="text-text-secondary text-lg font-[var(--font-body)] mb-2"
           >
-            // PORTFOLIO
+            Hey, I am <span className="text-accent font-semibold">{PROFILE.firstName}</span>
           </motion.p>
+          
+          <motion.h1
+            {...fadeUp(0.2)}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold font-[var(--font-heading)] leading-[1.1] text-text-primary tracking-tight mb-6"
+          >
+            Flutter <br className="hidden sm:block" />
+            Developer
+          </motion.h1>
 
-          {/* Headline */}
-          <div>
-            <motion.h1
-              {...fadeUp(0.1)}
-              className="font-[var(--font-heading)] text-[clamp(2.8rem,7vw,4.5rem)] font-black tracking-tight leading-[1.05] text-text-primary"
-            >
-              ABDERRAHMANE
-            </motion.h1>
-
-            <motion.div {...fadeUp(0.2)}>
-              <h1 className="font-[var(--font-heading)] text-[clamp(2.8rem,7vw,4.5rem)] font-black tracking-tight leading-[1.05] text-gradient">
-                EL BISSARI
-              </h1>
-              <SketchUnderline />
-            </motion.div>
-          </div>
-
-          {/* Subtitle */}
           <motion.p
             {...fadeUp(0.3)}
-            className="text-text-muted text-[11px] md:text-[12px] font-[var(--font-heading)] tracking-[0.25em] uppercase"
+            className="text-text-secondary text-base md:text-lg max-w-[85%] font-[var(--font-body)] leading-relaxed mb-10"
           >
-            {PROFILE.title}
+            {PROFILE.tagline}
           </motion.p>
 
-          {/* Personal one-liner */}
-          <motion.p
-            {...fadeUp(0.4)}
-            className="text-text-secondary/80 text-[15px] leading-relaxed max-w-[480px]"
-          >
-            Building cross-platform apps with Flutter, sharpening
-            fundamentals in C and Python at 1337, and figuring out
-            where LLMs actually fit into the way I build things.
-          </motion.p>
-
-          {/* CTA buttons — different widths on purpose */}
-          <motion.div {...fadeUp(0.5)} className="flex flex-wrap gap-4 pt-2">
-            <motion.a
-              href="#projects"
-              whileHover={{ scale: 1.04, boxShadow: "0 0 24px rgba(168,85,247,0.35)" }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2.5 px-8 py-3 rounded-lg bg-accent text-white text-[13px] font-[var(--font-heading)] tracking-wider uppercase shadow-md shadow-accent/20 transition-shadow"
-            >
-              View My Work
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </motion.a>
-
-            <motion.a
-              href={PROFILE.resumeUrl}
-              download
-              whileHover={{ scale: 1.04, boxShadow: "0 0 18px rgba(168,85,247,0.2)" }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-accent/30 text-accent text-[13px] font-[var(--font-heading)] tracking-wider uppercase hover:border-accent/60 hover:bg-accent/5 transition-all"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1" />
-              </svg>
-              CV
-            </motion.a>
-          </motion.div>
-
-          {/* Meta row */}
           <motion.div
-            {...fadeUp(0.6)}
-            className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[10px] font-[var(--font-heading)] tracking-[0.18em] uppercase text-text-muted/70 pt-3"
+            {...fadeUp(0.4)}
+            className="flex items-center gap-4 mb-16"
           >
-            <span className="flex items-center gap-1.5">
-              <span className="w-[5px] h-[5px] rounded-full bg-emerald-400/80" />
-              Available for internship
-            </span>
-            <span className="text-white/10">|</span>
-            <span>Marrakech, Morocco</span>
-            <span className="text-white/10">|</span>
-            <span>Student @ 1337</span>
+            <a
+              href="#contact"
+              className="px-8 py-3.5 bg-accent hover:bg-accent-light text-white rounded-full font-[var(--font-heading)] font-semibold tracking-wide transition-all shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] hover:-translate-y-0.5"
+            >
+              Hire me
+            </a>
+            <a
+              href={PROFILE.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 rounded-full border border-white/10 bg-bg-card/40 backdrop-blur-md flex items-center justify-center text-text-primary hover:text-accent hover:border-accent/40 transition-all hover:-translate-y-0.5"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
           </motion.div>
 
-          {/* Personal sign-off — NOT a stock quote */}
-          <motion.p
-            {...fadeUp(0.7)}
-            className="text-text-muted/50 text-[12px] italic font-[var(--font-mono)] pt-4"
+          <motion.div
+            {...fadeUp(0.5)}
+            className="w-full max-w-[400px] p-5 rounded-2xl border border-white/5 bg-bg-card/30 backdrop-blur-xl relative"
           >
-            — still debugging, still curious
-          </motion.p>
+            {/* Top left quote icon decoration */}
+            <div className="absolute -top-3 -left-3 text-4xl text-accent opacity-50 font-serif">"</div>
+            <p className="text-sm text-text-secondary leading-relaxed italic mb-4">
+              Building cross-platform apps with Flutter, sharpening fundamentals in C and Python at 1337, and figuring out where LLMs actually fit into the way I build things.
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center shrink-0 border border-accent/30">
+                <span className="text-accent font-bold font-[var(--font-heading)]">1337</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-sm font-semibold text-text-primary">Software Engineering Student</span>
+                <span className="text-xs text-text-muted">{PROFILE.school}</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
-        {/* ════ RIGHT COLUMN — code editor ════ */}
-        <motion.div
-          initial={{ opacity: 0, x: 30, rotate: 0 }}
-          animate={{ opacity: 1, x: 0, rotate: -1.5 }}
-          transition={{ duration: 0.7, delay: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="relative flex items-center justify-center lg:mt-4"
-        >
-          {/* ── Code editor card ── */}
-          <div className="relative w-full max-w-[440px] rounded-xl border border-accent/20 overflow-hidden bg-[#0c0c14] shadow-[0_0_40px_rgba(168,85,247,0.08)]">
-            {/* Title bar */}
-            <div className="flex items-center gap-2 px-4 py-2.5 bg-[#0f0f18] border-b border-white/[0.04]">
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]/70" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]/70" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]/70" />
-              </div>
-              <span className="ml-3 text-text-muted/50 text-[10px] font-[var(--font-mono)]">
-                portfolio_app.dart
-              </span>
-              <span className="ml-auto text-text-muted/30 text-[9px] font-[var(--font-mono)]">
-                Dart
-              </span>
-            </div>
-
-            {/* Code body */}
-            <div className="px-4 py-4 font-[var(--font-mono)] text-[12px] leading-[1.9] overflow-hidden">
-              {CODE_LINES.map((line, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -8 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.6 + i * 0.05, duration: 0.35 }}
-                  className="flex"
-                  style={{ paddingLeft: `${line.indent * 1.25}rem` }}
-                >
-                  <span className="w-6 text-right mr-3 text-text-muted/20 select-none text-[10px] tabular-nums">
-                    {i + 1}
-                  </span>
-                  <span>
-                    {line.tokens.length === 0
-                      ? "\u00A0"
-                      : line.tokens.map((tok, j) => (
-                          <span key={j} style={{ color: tok.c }}>{tok.t}</span>
-                        ))}
-                  </span>
-                </motion.div>
-              ))}
-
-              {/* Blinking cursor */}
-              <motion.div
-                className="flex"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.3 }}
-              >
-                <span className="w-6 text-right mr-3 text-text-muted/20 select-none text-[10px] tabular-nums">
-                  13
-                </span>
-                <span className="w-[7px] h-[18px] bg-accent/60 rounded-sm animate-pulse" />
-              </motion.div>
-            </div>
-
-            {/* Status bar */}
-            <div className="flex items-center justify-between px-4 py-1 bg-[#0f0f18] border-t border-white/[0.04] text-[9px] font-[var(--font-mono)] text-text-muted/30">
-              <span>UTF-8</span>
-              <span>Ln 13, Col 1</span>
-              <span className="flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/60" />
-                Ready
-              </span>
-            </div>
+        {/* ==================== RIGHT COLUMN (Visual) ==================== */}
+        <div className="relative h-[500px] lg:h-[650px] w-full flex items-center justify-center">
+          
+          {/* Orbital Rings Background */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              className="absolute w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] rounded-full border border-white/5"
+            />
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
+              className="absolute w-[450px] h-[450px] sm:w-[650px] sm:h-[650px] rounded-full border border-white/5"
+            />
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1.5, delay: 0.4, ease: "easeOut" }}
+              className="absolute w-[600px] h-[600px] sm:w-[850px] sm:h-[850px] rounded-full border border-white/[0.02]"
+            />
           </div>
 
-          {/* ── Floating tech pills ── */}
-          {TECH_PILLS.map((pill) => (
-            <motion.div
-              key={pill.label}
-              animate={{ y: [0, -6, 0] }}
-              transition={{
-                duration: 3.5 + Math.random() * 1.5,
-                delay: pill.delay,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute px-3 py-1 rounded-full bg-[#12121a]/90 border border-accent/15 backdrop-blur-sm text-[10px] font-[var(--font-heading)] tracking-wider uppercase text-accent/70"
-              style={{
-                top: pill.top,
-                left: pill.left,
-                right: pill.right,
-                bottom: pill.bottom,
-                rotate: pill.rotate,
-              }}
-            >
-              {pill.label}
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* ── Scroll indicator ────────────────────────────────── */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.6 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5"
-      >
-        <span className="text-text-muted/40 text-[9px] font-[var(--font-heading)] tracking-[0.35em] uppercase">
-          Scroll
-        </span>
-        <div className="w-[18px] h-[28px] border border-accent/20 rounded-full flex items-start justify-center p-1">
+          {/* 3D Character */}
           <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            className="w-[3px] h-[6px] bg-accent/50 rounded-full"
-          />
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            className="relative z-10 w-[120%] h-[120%] flex items-center justify-center -ml-[10%]"
+          >
+            {/* Dark Mode Avatar */}
+            <img
+              src="/avatar_v2.png"
+              alt="Developer 3D Avatar (Dark Mode)"
+              className="hidden dark:block w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] object-cover rounded-full border border-white/10 shadow-2xl shadow-accent/20"
+            />
+            {/* Light Mode Avatar */}
+            <img
+              src="/avatar_light.png"
+              alt="Developer 3D Avatar (Light Mode)"
+              className="block dark:hidden w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] object-cover rounded-full border border-black/10 shadow-2xl shadow-black/10"
+            />
+          </motion.div>
+
+          {/* Floating Tech Badges (positioned around the orbits) */}
+          {SKILLS.slice(0, 4).map((skill, index) => {
+            // Positioning array to simulate orbital placement
+            const positions = [
+              { top: "15%", left: "10%" },
+              { top: "25%", right: "15%" },
+              { bottom: "20%", left: "20%" },
+              { bottom: "10%", right: "25%" },
+            ];
+            
+            return (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 + index * 0.15 }}
+                className="absolute z-20 w-12 h-12 sm:w-14 sm:h-14 bg-bg-card/80 backdrop-blur-md border border-white/10 rounded-2xl flex items-center justify-center shadow-xl hover:scale-110 transition-transform cursor-pointer"
+                style={{
+                  ...positions[index],
+                  animation: `float ${3 + index * 0.5}s ease-in-out infinite alternate`,
+                }}
+              >
+                <img src={skill.icon} alt={skill.name} className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
+              </motion.div>
+            );
+          })}
+
         </div>
-      </motion.div>
+      </div>
+      
+      {/* Inline styles for the float animation */}
+      <style>{`
+        @keyframes float {
+          0% { transform: translateY(0px) rotate(0deg); }
+          100% { transform: translateY(-15px) rotate(5deg); }
+        }
+      `}</style>
     </section>
   );
 }

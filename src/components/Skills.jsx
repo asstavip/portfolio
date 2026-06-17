@@ -22,7 +22,7 @@ export default function Skills() {
 
         {/* Marquee Container */}
         <div
-          className={`relative flex overflow-hidden group/marquee transition-all duration-1000 ${
+          className={`relative flex overflow-hidden pause-on-hover transition-all duration-1000 ${
             inView ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`}
         >
@@ -31,7 +31,7 @@ export default function Skills() {
           <div className="absolute top-0 bottom-0 right-0 w-16 md:w-32 bg-gradient-to-l from-bg-primary to-transparent z-10 pointer-events-none" />
 
           {/* First Marquee Track */}
-          <div className="flex items-center gap-12 md:gap-20 whitespace-nowrap animate-marquee group-hover/marquee:[animation-play-state:paused] px-6">
+          <div className="flex items-center gap-12 md:gap-20 whitespace-nowrap animate-marquee px-6">
             {SKILLS.map((skill, index) => (
               <div
                 key={`marquee-1-${index}`}
@@ -52,7 +52,7 @@ export default function Skills() {
           </div>
 
           {/* Second Marquee Track (Duplicate for seamless loop) */}
-          <div className="flex items-center gap-12 md:gap-20 whitespace-nowrap animate-marquee group-hover/marquee:[animation-play-state:paused] px-6">
+          <div className="flex items-center gap-12 md:gap-20 whitespace-nowrap animate-marquee px-6">
             {SKILLS.map((skill, index) => (
               <div
                 key={`marquee-2-${index}`}
